@@ -16,6 +16,13 @@
 
                     {{ __('You are logged in! as Admin') }}
                 </div>
+                <div class="card-body">
+                    @if(auth()->user()->is_admin == 1)
+                    <a href="{{url('admin/home')}}">Admin</a>
+                    @else
+                    <div class=”panel-heading”>Normal User</div>
+                    @endif
+                </div>
             </div>
         </div>
     </div>
