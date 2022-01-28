@@ -1,4 +1,4 @@
-<div class="footer-copyright" style="bottom:0; width:100%; position:fixed;">
+<div class="footer-copyright" style="bottom:0; width:100%;">
         <p class="footer-company">All Rights Reserved. &copy; 2022 <a href="#">Ilham Alfath</a></p>
 </div>
     <!-- End copyright  -->

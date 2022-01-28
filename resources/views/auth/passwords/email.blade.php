@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top: 7.4%; margin-bottom: 8%">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+            <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);transition: 0.3s;border-radius: 5px;">
+                <div class="card-header text-center" style="background-color:#ff4d4d; color:#fff;"">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -33,9 +33,20 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-danger btn-block">
                                     {{ __('Send Password Reset Link') }}
                                 </button>
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('login') }}">
+                                        {{ __("Have an account? Login.") }}
+                                    </a>
+                                @endif
+
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('register') }}">
+                                        {{ __("Don't have account? Register.") }}
+                                    </a>
+                                @endif
                             </div>
                         </div>
                     </form>

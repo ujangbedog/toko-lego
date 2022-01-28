@@ -7,14 +7,14 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.html"><img src="{{ asset('vendor/app/images/logo.png') }}" class="logo" alt=""></a>
+                    <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('vendor/app/images/logo.png') }}" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                         <li class="dropdown megamenu-fw">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Product</a>
@@ -96,8 +96,40 @@
                         <li class="side-menu"><a href="#cart">
 						<i class="fa fa-shopping-bag"></i>
                             <span class="badge">3</span>
-					</a></li>
-                        <li class="account"><a href="#"><i class="fa fa-user"></i></a></li>
+					    </a></li>
+                        
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i></a>
+                            <ul class="dropdown-menu" style="margin-right: 0 auto; margin-left:50%; padding-left: 50%;">
+                                
+                            @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                            @else
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('My Account') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                        @endguest
                     </ul>
                 </div>
                 <!-- End Atribute Navigation -->
