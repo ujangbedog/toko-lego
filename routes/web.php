@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,8 @@ Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home
 
 Route::get('admin/form', [HomeController::class, 'form'])->name('form')->middleware('is_admin');
 
-Route::get('product-list', [ProductController::class, 'index']);
-Route::get('product-list/{id}/edit', [ProductController::class, 'edit']);
-Route::post('product-list/store', [ProductController::class, 'store']);
-Route::get('product-list/delete/{id}', [ProductController::class, 'destroy']);
+Route::get('admin/product', [ProductController::class, 'index']);
+Route::get('admin/product/{id}/edit', [ProductController::class, 'edit']);
+Route::post('admin/product/store', [ProductController::class, 'store']);
+Route::get('admin/product/delete/{id}', [ProductController::class, 'destroy']);
 
