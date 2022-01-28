@@ -12,7 +12,7 @@
     <!-- ALL PLUGINS -->
     <script src="{{ asset('vendor/app/js/jquery.superslides.min.js') }}"></script>
     <script src="{{ asset('vendor/app/js/bootstrap-select.js') }}"></script>
-    <script src="{{ asset('vendir/app/js/inewsticker.js') }}"></script>
+    <script src="{{ asset('vendor/app/js/inewsticker.js') }}"></script>
     <script src="{{ asset('vendor/app/js/bootsnav.js') }}"></script>
     <script src="{{ asset('vendor/app/js/images-loded.min.js') }}"></script>
     <script src="{{ asset('vendor/app/js/isotope.min.js') }}"></script>

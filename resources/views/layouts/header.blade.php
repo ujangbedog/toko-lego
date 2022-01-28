@@ -121,7 +121,7 @@
                                 </li>
                                 @endif
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('account') }}">{{ __('My Account') }}</a>
+                                    <a class="nav-link" href="">{{ __('My Account') }}</a>
                                 </li>
                                 <li class="nav-item">
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
