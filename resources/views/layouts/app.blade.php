@@ -30,13 +30,16 @@
     <link rel="stylesheet" href="{{ asset('vendor/app/css/responsive.css') }}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('vendor/app/css/custom.css') }}">
+    <style>
+        footer { position: sticky }
+    </style>
 
 </head>
 
 <body>
-    @extends('layouts.header')
+    @include('layouts.header')
     
     @yield('content')
 
-    @extends('layouts.footer')
+    @include('layouts.footer')
 </html>
