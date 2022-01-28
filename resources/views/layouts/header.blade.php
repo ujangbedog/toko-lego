@@ -115,8 +115,13 @@
                                 </li>
                             @endif
                             @else
+                                @if(auth()->user()->is_admin == 1)
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('My Account') }}</a>
+                                    <a class="nav-link" href="{{ route('admin.home') }}">{{ __('Admin Panel') }}</a>
+                                </li>
+                                @endif
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('account') }}">{{ __('My Account') }}</a>
                                 </li>
                                 <li class="nav-item">
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
