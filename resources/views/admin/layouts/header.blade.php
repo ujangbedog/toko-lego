@@ -32,6 +32,12 @@
     <link href="{{ asset('vendor/admin/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="{{ asset('vendor/admin/build/css/custom.min.css') }}" rel="stylesheet">
+
+    <link  href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   </head>
   <body class="nav-md">
     <div class="container body">
@@ -39,7 +45,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-puzzle-piece "></i> <span>Toko Lego</span></a>
+              <a href="{{ url('') }}" class="site_title"><i class="fa fa-puzzle-piece "></i> <span>Toko Lego</span></a>
             </div>
 
             <div class="clearfix"></div>
