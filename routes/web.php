@@ -25,3 +25,8 @@ Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home
 
 Route::get('admin/form', [HomeController::class, 'form'])->name('form')->middleware('is_admin');
 
+Route::get('product-list', [ProductController::class, 'index']);
+Route::get('product-list/{id}/edit', [ProductController::class, 'edit']);
+Route::post('product-list/store', [ProductController::class, 'store']);
+Route::get('product-list/delete/{id}', [ProductController::class, 'destroy']);
+
