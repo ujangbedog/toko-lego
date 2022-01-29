@@ -17,14 +17,16 @@
     <link href="{{ asset('vendor/admin/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <!-- NProgress -->
     <link href="{{ asset('vendor/admin/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="{{ asset('vendor/admin/vendors/iCheck/skins/flat/green.css') }}" rel="stylesheet">
-	
-    <!-- bootstrap-progressbar -->
-    <link href="{{ asset('vendor/admin/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
-    <!-- JQVMap -->
-    <link href="{{ asset('vendor/admin/vendors/jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet"/>
-    <!-- Custom Theme Style -->
+  
+    <!-- resource -->
+    @if(Request::path() == 'admin/products')
+      <link href="{{ asset('vendor/admin/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
+      <link href="{{ asset('vendor/admin/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css') }}" rel="stylesheet">
+      <link href="{{ asset('vendor/admin/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css') }}" rel="stylesheet">
+      <link href="{{ asset('vendor/admin/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css') }}" rel="stylesheet">
+      <link href="{{ asset('vendor/admin/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css') }}" rel="stylesheet">
+    @endif
+    <!-- Custom -->
     <link href="{{ asset('vendor/admin/build/css/custom.min.css') }}" rel="stylesheet">
 
   </head>

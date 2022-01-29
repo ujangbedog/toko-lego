@@ -29,35 +29,25 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'detail' => 'required',
+        $this->validate(request(), [
+            'name' => 'required|unique:products,name',
+            'price' => 'required|numeric',
             'description' => 'required',
-            'image_url' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        if ($image = $request->file('image')) {
-            $destinationPath = 'image/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
+        $products = new Product();
+        $products->user_id = Auth::user()->id;
+        $products->name = $request->post('name');
+        $products->price = $request->post('price');
+        $products->description = $request->post('description');
+        if ($request->hasFile('image_url')) {
+            $image_url = $request->file('image_url');
+            $name = rand(1000, 9999) . $image_url->getClientOriginalName();
+            $image_url->move('images/image/', $name);
+            $products->image_url = $name;
         }
-        
-        $file = $request->file('image_url');
-        $ext = $file->getClientOriginalExtension();
 
-        $dateTime = date('Ymd_his');
-        $newName = 'image_' . $dateTime . '.' . $ext;
-
-        $file->move(storage_path(env('PATH_IMAGE_PRODUCT')), $newName);
-
-        $product = new Product();
-        $product->user_id = Auth::user()->id;
-        $product->name = $request->post('name');
-        $product->price = $request->post('price');
-        $product->description = $request->post('description');
-        $product->image_url = $newName;
-        $product->save();
+        $products->save();
 
         return redirect('admin/products')->with('success', 'Produk berhasil di simpan');
     }
@@ -86,16 +76,16 @@ class ProductController extends Controller
         return redirect('admin/products')->with('success', 'Produk berhasil di update');
     }
 
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        $product = Product::find($id);
+        $product->delete_image_url();
         $product->delete();
-        redirect('/admin/products')->with('success', 'Produk berhasil di hapus');
+        return redirect('admin/products')->with('success', 'Produk Berhasil di Hapus');
     }
 
-    public function viewImage($imageName)
+    public function image($imageName)
     {
-        $filePath = storage_path(env('PATH_IMAGE') . 'products/' . $imageName);
+        $filePath = public_path('images/image/' . $imageName);
         return Image::make($filePath)->response();
     }
 }

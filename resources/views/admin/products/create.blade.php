@@ -2,55 +2,49 @@
 
 @section('content')
 <div class="right_col" role="main">
-    <div class="container col-md-8">
+    <div class="container col-md-12">
         <div class="row justify-content-center">
             <div class="col">
-                <h2>Product</h2>
+                <h2>Add Product</h2>
                 <div>
-                    <a href="{{ route('admin.products.create') }}" class="btn btn-primary"><span class="fa fa-plus"></span></a>
+                    <a href="{{ route('admin.products.index') }}" class="btn btn-primary"><span class="fa fa-arrow-left"></span></a>
                 </div>
+                <hr>
                 <br>
-                <div class="table-responsive">
-                    <table class="table table-striped table-sm">
-                        <thead>
-                            <tr>
-                                <th>Image</th>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Created at</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($products as $product)
-                                <tr>
-                                    <td><img src="{{ route('admin.products.image', $product->image_url ) }}"
-                                            width="100" /></td>
-                                    <td>{{ $product->id }}</td>
-                                    <td>{{ $product->name }}</td>
-                                    <td>{{ $product->price }}</td>
-                                    <td>{{ $product->created_at }}</td>
-                                    <td>
-                                        <a href="{{ route('admin.products.show', $product->id) }}"
-                                            class="btn ">show
-                                            detail</a>
-                                        <a href="{{ route('admin.products.edit', $product->id) }}"
-                                            class="btn btn-info">Edit</a>
-                                        <form action="{{ route('admin.products.destroy', $product->id']) }}"
-                                            method="POST" class="d-inline">
-                                            @method('DELETE')
-                                            @csrf
-                                            <input class="btn btn-danger" type="submit" value="Delete" />
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
             </div>
         </div>
+        @if(count($errors))
+                <div class="form-group">
+                    <div class="alert alert-danger">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            @endif
+            <form action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group">
+                    <label> Nama Produk </label>
+                    <input type="text" name="name" class="form-control" placeholder="Nama Produk">
+                </div>
+                <div class="form-group">
+                    <label> Harga </label>
+                    <input type="number" name="price" class="form-control" placeholder="Harga">
+                </div>
+                <div class="form-group">
+                    <label> Deskripsi </label>
+                    <textarea name="description" class="form-control" id="ckview" rows="3" placeholder="Deskripsi"></textarea>
+                </div>
+                <div class="form-group">
+                    <label> Gambar </label>
+                    <input class="form-control" type="file" name="image_url" value="{{ old('image_url') }}" />
+                </div><br>
+                <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-plus-square"></i> Submit</button>
+            </form>
     </div>
 </div>
 @endsection 

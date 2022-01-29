@@ -11,37 +11,31 @@
                 </div>
                 <br>
                 <div class="table-responsive">
-                    <table class="table table-striped table-sm">
+                    <table id="datatable" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
                                 <th>Image</th>
-                                <th>#</th>
                                 <th>Name</th>
                                 <th>Price</th>
                                 <th>Created at</th>
-                                <th></th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($products as $product)
                                 <tr>
-                                    <td><img src="{{ route('admin.products.image', $product->image_url ) }}"
-                                            width="100" /></td>
-                                    <td>{{ $product->id }}</td>
+                                    <td><img src="{{ route('products.image', $product->image_url) }}" width="75px" /></td>
                                     <td>{{ $product->name }}</td>
                                     <td>{{ $product->price }}</td>
                                     <td>{{ $product->created_at }}</td>
                                     <td>
-                                        <a href="{{ route('admin.products.show', $product->id) }}"
-                                            class="btn ">show
-                                            detail</a>
                                         <a href="{{ route('admin.products.edit', $product->id) }}"
-                                            class="btn btn-info">Edit</a>
+                                            class="btn btn-info btn-sm"><span class="fa fa-pencil"></span></a>
                                         <form action="{{ route('admin.products.destroy', $product->id) }}"
                                             method="POST" class="d-inline">
                                             @method('DELETE')
                                             @csrf
-                                            <input class="btn btn-danger" type="submit" value="Delete" />
+                                            <button class="btn btn-sm btn-danger" onclick="return confirm('Hapus Data?')"><span class="fa fa-trash"></span></button>
                                         </form>
                                     </td>
                                 </tr>

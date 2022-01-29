@@ -37,7 +37,7 @@ Route::name('admin.')->group(function () {
 });
 
 // view image routes
-Route::get('images/{fileImage}', [ProductController::class, 'viewImage'])->name('admin.products.image');
+Route::get('/images/image/{imageName}', [ProductController::class], 'image')->name('products.image');
 
 Route::get('ajax-crud-image-upload', [AjaxCRUDImageController::class, 'index']);
 Route::post('add-update-book', [AjaxCRUDImageController::class, 'store']);
