@@ -2,11 +2,12 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="{{ asset('vendor/admin/production/images/favicon.ico') }}" type="image/ico" />
+	  <link rel="icon" href="{{ asset('vendor/admin/production/images/favicon.ico') }}" type="image/ico" />
 
     <title>Gentelella Alela! | </title>
 
@@ -23,21 +24,9 @@
     <link href="{{ asset('vendor/admin/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
     <!-- JQVMap -->
     <link href="{{ asset('vendor/admin/vendors/jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet"/>
-    <!-- bootstrap-daterangepicker -->
-    <link href="{{ asset('vendor/admin/vendors/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendor/admin/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendor/admin/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendor/admin/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendor/admin/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('vendor/admin/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="{{ asset('vendor/admin/build/css/custom.min.css') }}" rel="stylesheet">
 
-    <link  href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   </head>
   <body class="nav-md">
     <div class="container body">

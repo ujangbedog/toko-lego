@@ -13,7 +13,7 @@
     <ul class="nav side-menu">
         <li><a><i class="fa fa-edit"></i> Data <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
-                <li><a href="{{ url('admin/product') }}">Product</a></li>
+                <li><a href="{{ url('admin/products') }}">Product</a></li>
                 <li><a href="{{ url('admin/users') }}">Users</a></li>
             </ul>
         </li>

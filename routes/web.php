@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\AjaxCRUDImageController;
 
 /*
@@ -28,11 +28,16 @@ Route::get('/admin', function () {
 })->middleware('is_admin');
 Route::get('admin/home', [HomeController::class, 'admin_home'])->name('admin.home')->middleware('is_admin');
 
+Route::name('admin.')->group(function () {
+    Route::group(['prefix' => 'admin'], function () {
+        Route::resource('products', ProductController::class);
 
-Route::get('admin/product', [ProductController::class, 'index']);
-Route::get('admin/product/{id}/edit', [ProductController::class, 'edit']);
-Route::post('admin/product/store', [ProductController::class, 'store']);
-Route::get('admin/product/delete/{id}', [ProductController::class, 'destroy']);
+        // Route::resource('orders', 'Admin\OrderController');
+    });
+});
+
+// view image routes
+Route::get('images/{fileImage}', [ProductController::class, 'viewImage'])->name('admin.products.image');
 
 Route::get('ajax-crud-image-upload', [AjaxCRUDImageController::class, 'index']);
 Route::post('add-update-book', [AjaxCRUDImageController::class, 'store']);
