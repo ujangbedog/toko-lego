@@ -19,7 +19,7 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="{{ asset('vendor/app/images/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('vendor/app/images/icon.png') }}" type="image/x-icon">
     <link rel="apple-touch-icon" href="{{ asset('vendor/app/images/apple-touch-icon.png') }}">
 
     <!-- Bootstrap CSS -->
