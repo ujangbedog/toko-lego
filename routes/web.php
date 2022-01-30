@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\App\AppProductController;
-use App\Http\Controllers\App\CartProductController;
+use App\Http\Controllers\App\AppCartController;
 use App\Http\Controllers\AjaxCRUDImageController;
 
 /*

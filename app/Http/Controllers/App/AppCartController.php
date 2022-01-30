@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\App;
+use App\Http\Controllers\Controller;
 
 use App\Product;
 use Illuminate\Http\Request;
 
-class CartController extends Controller
+class AppCartController extends Controller
 {
     public function __construct()
     {
