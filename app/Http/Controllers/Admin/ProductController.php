@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Image;
 
@@ -18,13 +19,17 @@ class ProductController extends Controller
     public function index()
     {
         // $products = Product::all();
-        $products = Product::where('user_id', Auth::user()->id)->get();
+        $products = Product::select("products.id", "products.name", "products.price", "products.image_url", "categories.category_name"
+        )
+        ->join("categories", "products.id", "=", "categories.id")
+        ->get();
         return view('admin.products.index', compact('products'));
     }
 
     public function create()
     {
-        return view('admin.products.create');
+        $category = Category::all();
+        return view('admin.products.create', compact('category'));
     }
 
     public function store(Request $request)
@@ -37,6 +42,7 @@ class ProductController extends Controller
 
         $products = new Product();
         $products->user_id = Auth::user()->id;
+        $products->category_id = $request->post('category');
         $products->name = $request->post('name');
         $products->price = $request->post('price');
         $products->description = $request->post('description');
@@ -60,8 +66,15 @@ class ProductController extends Controller
 
     public function edit($id)
     {
-        $product = Product::where('id', $id)->get()->first();
-        return view('admin.products.edit', compact('product'));
+        $products = Product::select("products.id", "products.name", "products.price", "products.description", "products.image_url", "categories.category_name"
+        )
+        ->join("categories", "products.id", "=", "categories.id")
+        ->where('products.id', $id)
+        ->get()
+        ->first();
+
+        $category = Category::all();
+        return view('admin.products.edit', compact('products', 'category'));
     }
 
     public function update(Request $request, $id)

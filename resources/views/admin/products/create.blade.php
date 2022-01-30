@@ -28,6 +28,14 @@
             <form action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
+                    <label> Category </label>
+                    <select class="form-control" name="category" required id="category">
+                        @foreach($category as $category)
+                            <option value="{{ $category->id }}" {{$category->category_id == $category->id  ? 'selected' : ''}}>{{ $category->category_name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <label> Nama Produk </label>
                     <input type="text" name="name" class="form-control" placeholder="Nama Produk">
                 </div>

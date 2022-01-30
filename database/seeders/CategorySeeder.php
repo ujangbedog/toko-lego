@@ -14,9 +14,9 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $city = Category::create(['name' => 'Lego City']);
-        $classic = Category::create(['name' => 'Lego Classic']);
-        $batman = Category::create(['name' => 'Lego Batman']);
-        $architecture = Category::create(['name' => 'Lego Architecture']);
+        $city = Category::create(['category_name' => 'Lego City']);
+        $classic = Category::create(['category_name' => 'Lego Classic']);
+        $batman = Category::create(['category_name' => 'Lego Batman']);
+        $architecture = Category::create(['category_name' => 'Lego Architecture']);
     }
 }

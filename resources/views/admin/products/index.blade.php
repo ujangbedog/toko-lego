@@ -17,7 +17,7 @@
                                 <th>Image</th>
                                 <th>Name</th>
                                 <th>Price</th>
-                                <th>Created at</th>
+                                <th>Category</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -27,7 +27,7 @@
                                     <td><img src="{{ route('products.image', $product->image_url) }}" width="75px" /></td>
                                     <td>{{ $product->name }}</td>
                                     <td>{{ $product->price }}</td>
-                                    <td>{{ $product->created_at }}</td>
+                                    <td>{{ $product->category_name }}</td>
                                     <td>
                                         <a href="{{ route('admin.products.edit', $product->id) }}"
                                             class="btn btn-info btn-sm"><span class="fa fa-pencil"></span></a>
