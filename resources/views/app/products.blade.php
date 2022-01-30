@@ -107,7 +107,6 @@
                         <div class="row product-categorie-box">
                             <div class="tab-content">
                             @foreach ($products as $idx => $product)
-                                @if ($idx == 0 || $idx % 4 == 0)
                                 <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                                     <div class="row">
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
@@ -135,10 +134,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                @endif
                             @endforeach
                             @foreach ($products as $idx => $product)
-                                @if ($idx == 0 || $idx % 4 == 0)
                                 <div role="tabpanel" class="tab-pane fade" id="list-view">
                                     <div class="list-view-box">
                                         <div class="row">
@@ -171,7 +168,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                @endif
                             @endforeach
                             </div>
                         </div>

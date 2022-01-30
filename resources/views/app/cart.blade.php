@@ -20,10 +20,7 @@
 <!-- Start Cart  -->
 <div class="cart-box-main">
     <div class="container">
-        @php $total = 0 @endphp
-        @if(session('cart'))
-            @foreach (session('cart') as $id => $product)
-                @php $total += $product['price'] * $product['quantity'] @endphp
+
         <div class="row">
             <div class="col-lg-12">
                 <div class="table-main table-responsive">
@@ -39,6 +36,10 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @php $total = 0 @endphp
+                        @if(session('cart'))
+                            @foreach (session('cart') as $id => $product)
+                                @php $total += $product['price'] * $product['quantity'] @endphp
                             <tr>
                                 <td class="thumbnail-img">
                                     <img class="img-fluid" src="{{ route('products.image', ['imageName' => $product['image_url']]) }}" alt="" />
@@ -62,12 +63,13 @@
                                     </a>
                                 </td>
                             </tr>
+                            @endforeach
+                        @endif
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-
         <div class="row my-8">
             <div class="col-lg-12">
                 <div class="update-box">
@@ -111,11 +113,9 @@
 
                 </div>
             </div>
+            
         </div>
-            @endforeach
-        @else
-            <h1 class="text-center noo-sh-title shopping-box">You don't have any shopping carts yet. <br> <br><a href="{{ url('products') }}" class="ml-auto btn hvr-hover"> Continue Shopping.</a></h1>
-        @endif
+        
     </div>
 </div>
 <!-- End Cart -->

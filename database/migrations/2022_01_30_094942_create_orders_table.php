@@ -21,10 +21,10 @@ class CreateOrdersTable extends Migration
             $table->integer('zip_code');
             $table->string('address');
             $table->string('address_line2');
-            $table->string('district');
             $table->string('city');
             $table->string('province');
             $table->string('phone_number');
+            $table->timestamps();
         });
     }
 

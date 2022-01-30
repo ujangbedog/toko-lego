@@ -66,8 +66,8 @@ Route::patch('carts/update', [AppCartController::class, 'update'])->name('carts.
 Route::delete('carts/remove', [AppCartController::class, 'remove'])->name('carts.remove');
 
 # Route for checkout
-// Route::get('/checkout', [AppCheckoutController::class, 'index'])->name('checkout.index');
 Route::get('/checkout', [AppCheckoutController::class, 'create'])->name('checkout.index');
+Route::post('/checkout', [AppCheckoutController::class, 'store'])->name('orders.store');
 
 
 # view image routes
