@@ -89,6 +89,7 @@ class AppCartController extends Controller
             }
 
             session()->flash('success', 'Product removed successfully');
+            
         }
     }
 }

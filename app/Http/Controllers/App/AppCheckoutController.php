@@ -76,7 +76,7 @@ class AppCheckoutController extends Controller
         }
 
         // remove chart session
-        // session()->forget('cart');
+        session()->forget('cart');
         // remove chart session
 
         return redirect('checkout/success');

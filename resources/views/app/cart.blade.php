@@ -73,7 +73,11 @@
         <div class="row my-8">
             <div class="col-lg-12">
                 <div class="update-box">
-                    <button class="update-cart"  data-id="{{ $id }}" style="border-radius: 50px">Update</button>
+                @if(session('cart'))
+                    @foreach (session('cart') as $id => $product)
+                    <button class="update-cart" data-id="{{ $id }}" style="border-radius: 50px">Update</button>
+                    @endforeach
+                @endif
                 </div>
             </div>
         </div>
