@@ -137,6 +137,8 @@
                                 </div>
                                 @endif
                             @endforeach
+                            @foreach ($products as $idx => $product)
+                                @if ($idx == 0 || $idx % 4 == 0)
                                 <div role="tabpanel" class="tab-pane fade" id="list-view">
                                     <div class="list-view-box">
                                         <div class="row">
@@ -169,7 +171,8 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                @endif
+                            @endforeach
                             </div>
                         </div>
                     </div>

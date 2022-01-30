@@ -51,7 +51,7 @@
                                 </td>
                                 <td class="quantity-box">
                                     <input type="hidden" value="{{ $product['quantity'] }}" class="quantity">
-                                    <input type="number" value="{{ $product['quantity'] }}" class="c-input-text quantity">
+                                    <input type="number" id="quantity" value="{{ $product['quantity'] }}" class="c-input-text quantity">
                                 </td>
                                 <td class="total-pr">
                                     <p>Rp. {{ number_format($product['price'] * $product['quantity']) }}</p>
@@ -71,7 +71,7 @@
         <div class="row my-8">
             <div class="col-lg-12">
                 <div class="update-box">
-                    <button class="update-cart" data-id="{{ $id }}" style="border-radius: 50px">Update</button>
+                    <button class="update-cart"  data-id="{{ $id }}" style="border-radius: 50px">Update</button>
                 </div>
             </div>
         </div>
@@ -104,7 +104,7 @@
                     </div>
                     <hr> </div>      
                     <div class="col-12 d-flex shopping-box">
-                        <a href="checkout.html" class="ml-auto btn hvr-hover">Checkout</a> 
+                        <a href="{{ route('checkout.index') }}" class="ml-auto btn hvr-hover">Checkout</a> 
                     </div>
                     <div class="col-lg-8 col-sm-12"></div>
 

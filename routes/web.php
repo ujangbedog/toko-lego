@@ -5,7 +5,7 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\App\AppProductController;
 use App\Http\Controllers\App\AppCartController;
-use App\Http\Controllers\AjaxCRUDImageController;
+use App\Http\Controllers\App\AppCheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,15 +65,12 @@ Route::get('/carts/add/{id}', [AppCartController::class, 'add'])->name('carts.ad
 Route::patch('carts/update', [AppCartController::class, 'update'])->name('carts.update');
 Route::delete('carts/remove', [AppCartController::class, 'remove'])->name('carts.remove');
 
+# Route for checkout
+// Route::get('/checkout', [AppCheckoutController::class, 'index'])->name('checkout.index');
+Route::get('/checkout', [AppCheckoutController::class, 'create'])->name('checkout.index');
 
-// view image routes
+
+# view image routes
 Route::get('/images/image/{imageName}', [ProductController::class], 'image')->name('products.image');
 
-
-
-//example
-Route::get('ajax-crud-image-upload', [AjaxCRUDImageController::class, 'index']);
-Route::post('add-update-book', [AjaxCRUDImageController::class, 'store']);
-Route::post('edit-book', [AjaxCRUDImageController::class, 'edit']);
-Route::post('delete-book', [AjaxCRUDImageController::class, 'destroy']);
 

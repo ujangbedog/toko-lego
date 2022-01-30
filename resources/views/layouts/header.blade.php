@@ -36,7 +36,7 @@
                 <div class="attr-nav">
                     <ul>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                        <li class="side-menus"><a href="{{ url('/carts') }}"><i class="fa fa-shopping-bag"></i><span class="badge">3</span></a></li>
+                        <li class="side-menus"><a href="{{ url('/carts') }}"><i class="fa fa-shopping-bag"></i><span class="badge">{{ count(session('cart',array())) }}</span></a></li>
                         
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i></a>

@@ -73,6 +73,8 @@ class AppCartController extends Controller
             session()->put('cart', $cart);
             session()->flash('success', 'Cart updated successfully');
             echo json_encode(array('status' => 'ok'));
+        }else{
+            echo json_encode(array('status' => 'error'));
         }
     }
 
