@@ -7,13 +7,41 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+
 ## About App
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This "Toko Lego" e-commerce application is made to meet the final semester exam. Created using laravel framework.  
 
+
+
+## Installation
+
+Using [seeder](https://laravel.com/docs/8.x/seeding#running-seeders) to install migrate.
+
+
+
+## For Login
+### Roles Admin
+
+email: admin@gmail.com
+
+password: admin123 
+
+
+### Roles User
+
+email: user@gmail.com
+
+password: user123
+
+
+
+## NOTE
+
+This application is not completely finished, and there are still many shortcomings and/or bugs that have not been fixed. Maybe in the future I'll fix it.
 
 
 
 ## License
 
-This App using Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This App using Laravel framework and open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
