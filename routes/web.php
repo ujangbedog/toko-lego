@@ -45,6 +45,8 @@ Route::get('/about', [AppController::class, 'about'])->name('about');
 
 # Route for products
 Route::get('/products', [AppProductController::class, 'index'])->name('products.index');
+Route::get('/products/{id}', [AppProductController::class, 'show'])->name('products.show');
+Route::get('/images/image/{imageName}', [AppProductController::class, 'image'])->name('products.image');
 # Route for products by Categories
 Route::prefix('products')->group(function() {
     Route::get('category/lego-city', [AppProductController::class, 'category_city'])->name('category.city');

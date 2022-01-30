@@ -1920,6 +1920,32 @@
  .update-box input[type="submit"]:hover{
      background: #d33b33;
 }
+.update-box button{
+    background: #010101;
+    border: medium none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #fff;
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    height: 50px;
+    line-height: 40px;
+    margin-right: 15px;
+    padding: 0 20px;
+    text-shadow: none;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    white-space: nowrap;
+    width: inherit;
+}
+.update-box button:hover{
+    background: #d33b33;
+}
  .order-box h3{
      font-size: 16px;
      color: #222222;
@@ -1995,7 +2021,7 @@
 }
  .new-account-login h5 {
      font-size: 18px;
-     color: #1111111;
+     color: #111111;
      font-weight: 600;
 }
  .new-account-login h5 a:hover{

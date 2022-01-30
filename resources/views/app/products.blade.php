@@ -116,14 +116,15 @@
                                                     <div class="type-lb">
                                                         <p class="sale">Sale</p>
                                                     </div>
-                                                    <img src="{{ route('products.image', ['imageName' => $product->image_url]) }}" class="img-fluid" alt="Image">
+                                                    <a href="{{ route('products.show', ['id' => $product->id]) }}"><img src="{{ route('products.image', ['imageName' => $product->image_url]) }}"
+                                href="{{ route('products.show', ['id' => $product->id]) }}" class="img-fluid"></a>
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                         </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
+                                                        <a class="cart" href="{{ route('carts.add', ['id' => $product->id]) }}">Add to Cart</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">

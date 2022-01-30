@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\App;
 use App\Http\Controllers\Controller;
 
-use App\Product;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class AppCartController extends Controller
@@ -27,7 +27,6 @@ class AppCartController extends Controller
 
         $cart = session()->get('cart');
         
-        // if cart is empty then this the first product
         if(!$cart) {
 
             $cart = [
@@ -44,7 +43,6 @@ class AppCartController extends Controller
             return redirect('/carts')->with('success', 'Product added to cart successfuly!');
         }
 
-        // if cart not empty then check if this product exist then increment quantity
         if(isset($cart[$id])) {
 
             $cart[$id]['quantity']++;
@@ -54,7 +52,6 @@ class AppCartController extends Controller
             return redirect('/carts')->with('success', 'Product added to cart succesfully!');
         }
 
-        // if item not exist in cart then add to cart with quantity = 1
         $cart[$id] = [
             "name" => $product->name,
             "quantity" => 1,
@@ -72,12 +69,10 @@ class AppCartController extends Controller
         if($request->id and $request->quantity)
         {
             $cart = session()->get('cart');
-
             $cart[$request->id]["quantity"] = $request->quantity;
-
             session()->put('cart', $cart);
-
             session()->flash('success', 'Cart updated successfully');
+            echo json_encode(array('status' => 'ok'));
         }
     }
 

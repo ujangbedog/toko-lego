@@ -4,7 +4,45 @@
     <!-- End copyright  -->
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+    @if(Request::path() == 'carts')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".update-cart").click(function (e) {
+                e.preventDefault();
+                
+                var ele = $(this);
 
+                $.ajax({
+                    url: '{{ route('carts.update') }}',
+                    method: "PATCH",
+                    data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id"), quantity: ele.parents("tr").find(".quantity").val()},
+                    success: function (response) {
+                        window.location.reload();
+                    }
+                });
+            });
+
+            $(".remove-from-cart").click(function (e) {
+                e.preventDefault();
+
+                var ele = $(this);
+
+                if(confirm("Are you sure")) {
+                    $.ajax({
+                        url: '{{ route('carts.remove') }}',
+                        method: "DELETE",
+                        data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id")},
+                        success: function (response) {
+                            window.location.reload();
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
+    @endif
     <!-- ALL JS FILES -->
     <script src="{{ asset('vendor/app/js/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('vendor/app/js/popper.min.js') }}"></script>
@@ -25,4 +63,5 @@
     <script src="{{ asset('vendor/app/js/form-validator.min.js') }}"></script>
     <script src="{{ asset('vendor/app/js/contact-form-script.js') }}"></script>
     <script src="{{ asset('vendor/app/js/custom.js') }}"></script>
+    
 </body>
