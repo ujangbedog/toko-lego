@@ -95,4 +95,10 @@ class ProductController extends Controller
         $product->delete();
         return redirect('admin/products')->with('success', 'Produk Berhasil di Hapus');
     }
+
+    public function image($imageName)
+    {
+        $filePath = public_path('images/image/' . $imageName);
+        return Image::make($filePath)->response();
+    }
 }
