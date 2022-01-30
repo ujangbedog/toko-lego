@@ -18,6 +18,10 @@
     <script src="{{ asset('vendor/app/js/isotope.min.js') }}"></script>
     <script src="{{ asset('vendor/app/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('vendor/app/js/baguetteBox.min.js') }}"></script>
+    @if(Request::path() == 'products')
+    <script src="{{ asset('vendor/app/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('vendor/app/js/jquery.nicescroll.min.js') }}"></script>
+    @endif
     <script src="{{ asset('vendor/app/js/form-validator.min.js') }}"></script>
     <script src="{{ asset('vendor/app/js/contact-form-script.js') }}"></script>
     <script src="{{ asset('vendor/app/js/custom.js') }}"></script>

@@ -10,7 +10,7 @@
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Welcome To <br> The Toko Lego</strong></h1>
                                 <p class="m-b-40">Only the best is good enough.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                            <p><a class="btn hvr-hover" href="{{ route('products.index') }}">Shop New</a></p>
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Welcome To <br>The Toko Lego</strong></h1>
                             <p class="m-b-40">Only the best is good enough.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                            <p><a class="btn hvr-hover" href="{{ route('products.index') }}">Shop New</a></p>
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Welcome To <br>The Toko Lego</strong></h1>
                             <p class="m-b-40">Only the best is good enough..</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                            <p><a class="btn hvr-hover" href="{{ route('products.index') }}">Shop New</a></p>
                         </div>
                     </div>
                 </div>
@@ -58,21 +58,21 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="{{ asset('vendor/app/images/category/city.jpg') }}" alt="" />
-                        <a class="btn hvr-hover" href="#">Lego City</a>
+                        <a class="btn hvr-hover" href="{{ route('category.city') }}">Lego City</a>
                     </div>
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="{{ asset('vendor/app/images/category/batman.jpg') }}" alt="" />
-                        <a class="btn hvr-hover" href="#">Lego Batman</a>
+                        <a class="btn hvr-hover" href="{{ route('category.classic') }}">Lego Batman</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="{{ asset('vendor/app/images/category/classic.jpg') }}" alt="" />
-                        <a class="btn hvr-hover" href="#">Lego Classic</a>
+                        <a class="btn hvr-hover" href="{{ route('category.classic') }}">Lego Classic</a>
                     </div>
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="{{ asset('vendor/app/images/category/architecture.jpg') }}" alt="" />
-                        <a class="btn hvr-hover" href="#">Lego Architecture</a>
+                        <a class="btn hvr-hover" href="{{ route('actegory.architecture') }}">Lego Architecture</a>
                     </div>
                 </div>
             </div>

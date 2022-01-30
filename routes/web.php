@@ -34,6 +34,16 @@ Route::get('admin/home', [AppController::class, 'admin_home'])->name('admin.home
 // Route for products
 Route::get('/products', [AppProductController::class, 'index'])->name('products.index');
 
+Route::prefix('products')->group(function() {
+    Route::get('category/lego-city', [AppProductController::class, 'category_city'])->name('category.city');
+    Route::get('category/lego-classic', [AppProductController::class, 'category_classic'])->name('category.classic');
+    Route::get('category/lego-batman', [AppProductController::class, 'category_batman'])->name('category.batman');
+    Route::get('category/lego-architecture', [AppProductController::class, 'category_architecture'])->name('category.architecture');
+    Route::get('/category', function () {
+        return redirect('/products');
+    });
+});
+
 Route::name('admin.')->group(function () {
     Route::group(['prefix' => 'admin'], function () {
         Route::resource('products', ProductController::class);
