@@ -13,6 +13,10 @@
 This "Toko Lego" e-commerce application is made to meet the final semester exam. Created using laravel framework.  
 
 
+## Group
+* Ilham Alfath
+* Widi Fazriani
+
 
 ## Installation
 
@@ -21,14 +25,14 @@ Using [seeder](https://laravel.com/docs/8.x/seeding#running-seeders) to install 
 
 
 ## For Login
-### Roles Admin
+* Roles Admin
 
 email: admin@gmail.com
 
 password: admin123 
 
 
-### Roles User
+* Roles User
 
 email: user@gmail.com
 
