@@ -8,10 +8,6 @@
 </p>
 
 
-## About App
-
-This "Toko Lego" e-commerce application is made to meet the final semester exam. Created using laravel framework.  
-
 
 ## Group
 * Ilham Alfath
