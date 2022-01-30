@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Image;
-// use App\ProductReviews;
 use Illuminate\Support\Facades\Auth;
 
 class AppProductController extends Controller
@@ -45,24 +44,6 @@ class AppProductController extends Controller
     public function create()
     {
         return view('products.create');
-    }
-
-    public function storeReview(Request $request)
-    {
-        $this->validate(request(), [
-            'rating' => 'required',
-            'description' => 'required',
-        ]);
-        $reviews = new ProductReviews();
-        $reviews->user_id = Auth::user()->id;
-        $reviews->name = Auth::user()->name;
-       
-        $reviews->rating = $request->post('rating');
-        $reviews->description = $request->post('description');
-
-        $reviews->save();
-
-        return redirect('admin/reviews')->with('success', 'Berhasil Menambahkan Review');
     }
 
     #route for category
