@@ -46,39 +46,33 @@
         </div>
     </div>
     <!-- End Slider -->
+    <br><br>
 
     <!-- Start Categories  -->
     <div class="categories-shop">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="title-all text-center">
+                <h1>Category Products</h1>
+            </div>
+            <div class="row">    
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
-                        <img class="img-fluid" src="{{ asset('vendor/app/images/t-shirts-img.jpg') }}" alt="" />
-                        <a class="btn hvr-hover" href="#">T-shirts</a>
+                        <img class="img-fluid" src="{{ asset('vendor/app/images/category/city.jpg') }}" alt="" />
+                        <a class="btn hvr-hover" href="#">Lego City</a>
                     </div>
                     <div class="shop-cat-box">
-                        <img class="img-fluid" src="{{ asset('vendor/app/images/shirt-img.jpg') }}" alt="" />
-                        <a class="btn hvr-hover" href="#">Shirt</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="{{ asset('vendor/app/images/wallet-img.jpg') }}" alt="" />
-                        <a class="btn hvr-hover" href="#">Wallet</a>
-                    </div>
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="{{ asset('vendor/app/images/women-bag-img.jpg') }}" alt="" />
-                        <a class="btn hvr-hover" href="#">Bags</a>
+                        <img class="img-fluid" src="{{ asset('vendor/app/images/category/batman.jpg') }}" alt="" />
+                        <a class="btn hvr-hover" href="#">Lego Batman</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
-                        <img class="img-fluid" src="{{ asset('vendor/app/images/shoes-img.jpg') }}" alt="" />
-                        <a class="btn hvr-hover" href="#">Shoes</a>
+                        <img class="img-fluid" src="{{ asset('vendor/app/images/category/classic.jpg') }}" alt="" />
+                        <a class="btn hvr-hover" href="#">Lego Classic</a>
                     </div>
                     <div class="shop-cat-box">
-                        <img class="img-fluid" src="{{ asset('vendor/app/images/women-shoes-img.jpg') }}" alt="" />
-                        <a class="btn hvr-hover" href="#">Women Shoes</a>
+                        <img class="img-fluid" src="{{ asset('vendor/app/images/category/architecture.jpg') }}" alt="" />
+                        <a class="btn hvr-hover" href="#">Lego Architecture</a>
                     </div>
                 </div>
             </div>
@@ -93,7 +87,7 @@
                 <div class="col-lg-12">
                     <div class="title-all text-center">
                         <h1>Featured Products</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                        <p>Find the best with.</p>
                     </div>
                 </div>
             </div>

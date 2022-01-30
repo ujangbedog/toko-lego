@@ -16,6 +16,7 @@
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url('/about') }}">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
                         <li class="dropdown megamenu-fw">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Product</a>
                             <ul class="dropdown-menu megamenu-content" role="menu">
@@ -73,18 +74,15 @@
                                 </li>
                             </ul>
                         </li>
+                        @if(auth()->user())
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
                                 <li><a href="my-account.html">My Account</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
-                                <li><a href="shop-detail.html">Shop Detail</a></li>
+                                <li><a href="checkout.html">Checkout</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="service.html">Our Service</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                        @endif
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
