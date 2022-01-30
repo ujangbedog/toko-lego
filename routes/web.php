@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\App\AppProductController;
 use App\Http\Controllers\App\AppCartController;
 use App\Http\Controllers\App\AppCheckoutController;
@@ -28,8 +29,7 @@ Auth::routes();
 Route::name('admin.')->group(function () {
     Route::group(['prefix' => 'admin'], function () {
         Route::resource('products', ProductController::class);
-
-        // Route::resource('orders', 'Admin\OrderController');
+        Route::resource('users', UserController::class);
     });
 });
 Route::get('/admin', function () {
@@ -38,9 +38,10 @@ Route::get('/admin', function () {
 Route::get('admin/home', [AppController::class, 'admin_home'])->name('admin.home')->middleware('is_admin');
 
 
-# Route for roles
+# Route for app
 Route::get('/', [AppController::class, 'index'])->name('home');
 Route::get('/about', [AppController::class, 'about'])->name('about');
+Route::get('/contact', [AppController::class, 'contact'])->name('contact');
 
 
 # Route for products
