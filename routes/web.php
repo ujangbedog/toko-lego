@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\App\AppProductController;
 use App\Http\Controllers\AjaxCRUDImageController;
 
 /*
@@ -30,7 +31,8 @@ Route::get('/admin', function () {
 })->middleware('is_admin');
 Route::get('admin/home', [AppController::class, 'admin_home'])->name('admin.home')->middleware('is_admin');
 
-
+// Route for products
+Route::get('/products', [AppProductController::class, 'index'])->name('products.index');
 
 Route::name('admin.')->group(function () {
     Route::group(['prefix' => 'admin'], function () {

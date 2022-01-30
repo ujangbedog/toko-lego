@@ -20,5 +20,9 @@ class AppController extends Controller
     {
         return view('app.about');
     }
+    public function contact()
+    {
+        return view('app.contact');
+    }
     
 }
