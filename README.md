@@ -24,7 +24,7 @@ Using [seeder](https://laravel.com/docs/8.x/seeding#running-seeders) to install 
 
 
 
-## For Login
+## For Authenticate
 * Roles Admin
 
 email: admin@gmail.com
