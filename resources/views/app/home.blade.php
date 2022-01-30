@@ -72,7 +72,7 @@
                     </div>
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="{{ asset('vendor/app/images/category/architecture.jpg') }}" alt="" />
-                        <a class="btn hvr-hover" href="{{ route('actegory.architecture') }}">Lego Architecture</a>
+                        <a class="btn hvr-hover" href="{{ route('category.architecture') }}">Lego Architecture</a>
                     </div>
                 </div>
             </div>

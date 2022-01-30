@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\App\AppProductController;
+use App\Http\Controllers\App\CartProductController;
 use App\Http\Controllers\AjaxCRUDImageController;
 
 /*
@@ -23,17 +24,28 @@ use App\Http\Controllers\AjaxCRUDImageController;
 
 Auth::routes();
 
-// Route for app
-Route::get('/', [AppController::class, 'index'])->name('home');
-Route::get('/about', [AppController::class, 'about'])->name('about');
+# Route for admin
+Route::name('admin.')->group(function () {
+    Route::group(['prefix' => 'admin'], function () {
+        Route::resource('products', ProductController::class);
+
+        // Route::resource('orders', 'Admin\OrderController');
+    });
+});
 Route::get('/admin', function () {
     return redirect('/admin/home');
 })->middleware('is_admin');
 Route::get('admin/home', [AppController::class, 'admin_home'])->name('admin.home')->middleware('is_admin');
 
-// Route for products
-Route::get('/products', [AppProductController::class, 'index'])->name('products.index');
 
+# Route for roles
+Route::get('/', [AppController::class, 'index'])->name('home');
+Route::get('/about', [AppController::class, 'about'])->name('about');
+
+
+# Route for products
+Route::get('/products', [AppProductController::class, 'index'])->name('products.index');
+# Route for products by Categories
 Route::prefix('products')->group(function() {
     Route::get('category/lego-city', [AppProductController::class, 'category_city'])->name('category.city');
     Route::get('category/lego-classic', [AppProductController::class, 'category_classic'])->name('category.classic');
@@ -44,13 +56,13 @@ Route::prefix('products')->group(function() {
     });
 });
 
-Route::name('admin.')->group(function () {
-    Route::group(['prefix' => 'admin'], function () {
-        Route::resource('products', ProductController::class);
 
-        // Route::resource('orders', 'Admin\OrderController');
-    });
-});
+# Route for carts
+Route::get('/carts', [AppCartController::class, 'index'])->name('carts.index');
+Route::get('/carts/add/{id}', [AppCartController::class, 'add'])->name('carts.add');
+Route::patch('carts/update', [AppCartController::class, 'update'])->name('carts.update');
+Route::delete('carts/remove', [AppCartController::class, 'remove'])->name('carts.remove');
+
 
 // view image routes
 Route::get('/images/image/{imageName}', [ProductController::class], 'image')->name('products.image');
