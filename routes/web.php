@@ -68,6 +68,7 @@ Route::delete('carts/remove', [AppCartController::class, 'remove'])->name('carts
 # Route for checkout
 Route::get('/checkout', [AppCheckoutController::class, 'create'])->name('checkout.index');
 Route::post('/checkout', [AppCheckoutController::class, 'store'])->name('orders.store');
+Route::get('/checkout/success', [AppCheckoutController::class, 'success'])->name('orders.success');
 
 
 # view image routes

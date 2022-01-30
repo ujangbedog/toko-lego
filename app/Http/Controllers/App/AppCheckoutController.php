@@ -20,6 +20,10 @@ class AppCheckoutController extends Controller
         $orders=Order::where('user_id', '=', Auth::user()->id)->get();
         return view('app.checkout', compact('orders'));
     }
+    public function success()
+    {
+        return view('app.success');
+    }
     public function create()
     {
         $cart = session()->get('cart');
@@ -75,6 +79,6 @@ class AppCheckoutController extends Controller
         // session()->forget('cart');
         // remove chart session
 
-        return redirect('checkout/success' . $order->id);
+        return redirect('checkout/success');
     }
 }
