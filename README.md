@@ -8,12 +8,6 @@
 </p>
 
 
-
-## Group
-* Ilham Alfath
-* Widi Fazriani
-
-
 ## Installation
 
 Using [seeder](https://laravel.com/docs/8.x/seeding#running-seeders) to install migrate.
